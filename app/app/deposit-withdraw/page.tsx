@@ -14,7 +14,7 @@ export default function RampPage() {
   const [otcModalOpen, setOtcModalOpen] = useState(false)
   const { connected } = useWallet()
 
-  return (
+  return
     <>
       <div className="py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="mb-8">
@@ -223,7 +223,6 @@ export default function RampPage() {
       {/* Modals */}
       <BanxaOnrampModal isOpen={banxaModalOpen} onClose={() => setBanxaModalOpen(false)} />
       <OTCRequestModal isOpen={otcModalOpen} onClose={() => setOtcModalOpen(false)} initialAmount={50000} />
-    <>
+    </>
   )
 }
-
