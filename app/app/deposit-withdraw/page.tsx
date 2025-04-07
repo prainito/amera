@@ -4,7 +4,6 @@ import { useState } from "react"
 import { CreditCard, ArrowUpDown, DollarSign, Banknote, Landmark, Wallet } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import MainLayout from "@/components/layout/main-layout"
 import { useWallet } from "@/lib/blockchain/wallet-context"
 import { BanxaOnrampModal } from "@/components/onramp/banxa-onramp-modal"
 import OTCRequestModal from "@/components/otc/otc-request-modal"
@@ -16,7 +15,7 @@ export default function RampPage() {
   const { connected } = useWallet()
 
   return (
-    <MainLayout>
+    <>
       <div className="py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gray-900">Deposit & Withdraw</h1>
@@ -224,7 +223,7 @@ export default function RampPage() {
       {/* Modals */}
       <BanxaOnrampModal isOpen={banxaModalOpen} onClose={() => setBanxaModalOpen(false)} />
       <OTCRequestModal isOpen={otcModalOpen} onClose={() => setOtcModalOpen(false)} initialAmount={50000} />
-    </MainLayout>
+    <>
   )
 }
 
